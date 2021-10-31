@@ -1,0 +1,74 @@
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+        </div>
+    </div>
+  </header>
+  <ng-container>
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Filter Category</button>
+            <div ngbDropdownMenu class="text-center " aria-labelledby="dropdownBasic1">
+              <div class="">Choose filter</div>
+              <!-- <span href="#" class="badge badge-pill d-block  badge-primary">Primary</span> -->
+              <ng-container *ngFor="let category of categories">
+              <a role="button" (click)="addTag(category.subCategory)" class="badge mx-2 badge-primary">{{category.subCategory}}</a>
+            </ng-container>
+            </div>
+          </div>
+          <ng-container *ngFor="let filter of filterCategory">
+          <a role="button" (click)="removeTag(filter)" class="badge badge-primary ml-3">{{filter}}</a>
+        </ng-container>
+          
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <!-- ngFor goes here -->
+        
+        <ng-container *ngFor="let Product of products;"  >
+        <ng-container *ngIf="Product.visible">
+          <div class="col mb-5 ">
+                <div  class="card h-100 bg-white rounded">
+                    <div class="card-img-top text-center mt-5 ">
+                      <fa-icon [icon]="faTshirt" size="4x" [styles]="{'stroke': 'blue', 'color': 'blue'}"></fa-icon>
+                    </div>
+                    <!-- Product details-->
+                    <div class="card-body rounded p-4">
+                        <div class="text-center">
+                            <!-- MAin name-->
+                            <h5 class="fw-bolder">{{Product.name}}</h5>
+                             <!-- sub name-->
+                             <h5 class="fw-bolder">{{Product.price}}</h5>
+                             <h5 class="fw-bolder">{{Product.category}}</h5>
+                        
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addToCart(Product)"
+                           >Add to cart</a></div>
+                    </div>
+                </div>
+            </div>
+          </ng-container>
+          </ng-container>
+          
+           
+            
+       
+            
+            
+        </div>
+    </div>
+  </section>
+  </ng-container>

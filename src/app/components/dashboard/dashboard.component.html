@@ -1,0 +1,124 @@
+<section class="py-3 h-100 bg-color">
+  <div class="container-fluid   mt-5 h-100">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 h-100 ">
+      <mat-tab-group class="mx-4 col h-75  bg-light ">
+        <div>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              Products
+            </ng-template>
+            <ng-container *ngFor="let product of products">
+              <mat-card class="border bg-light my-1">
+                <mat-card-title>
+                  Product name:
+                  {{product.name}}
+                  <fa-icon [icon]="faTshirt" size="1x" [styles]="{'stroke': 'blue', 'color': 'blue'}">
+
+                  </fa-icon>
+                </mat-card-title>
+                <mat-card-subtitle>Product price:{{product.price}}</mat-card-subtitle>
+                <mat-card-subtitle align="end">
+                  <span role="button" (click)="removeProduct(product)" class="badge badge-danger badge-pill ">
+                    delete
+                  </span>
+                </mat-card-subtitle>
+              </mat-card>
+            </ng-container>
+          </mat-tab>
+        </div>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Category
+          </ng-template>
+          <ng-container *ngFor="let category of categories">
+            <mat-card class="border my-1">
+              <mat-card-title>
+                {{category.mainCategory}}
+              </mat-card-title>
+              <mat-card-subtitle>{{category.subCategory}}</mat-card-subtitle>
+              <mat-card-subtitle align="end">
+                <span role="button" (click)="removeCategory(category)" class="badge badge-danger badge-pill ">
+                  delete
+                </span>
+              </mat-card-subtitle>
+            </mat-card>
+          </ng-container>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Users
+          </ng-template>
+          <ng-container *ngFor="let user of users">
+            <mat-card class="border my-1">
+              <mat-card-title>
+                Name:
+                {{user.name}}
+              </mat-card-title>
+              <mat-card-subtitle>Email: {{user.email}}</mat-card-subtitle>
+              <mat-card-subtitle align="end">
+                <span role="button" (click)="removeUser(user)" class="badge badge-danger badge-pill ">
+                  delete
+                </span>
+              </mat-card-subtitle>
+            </mat-card>
+          </ng-container>
+        </mat-tab>
+
+      </mat-tab-group>
+
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState1 = true" (closed)="panelOpenState1 = false">
+         
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Add product
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <form (submit)=" OnAddProductSubmit()" class="needs-validation " novalidate>
+            <p>
+              <mat-form-field appearance="standard">
+                <mat-label>Product name</mat-label>
+                <input matInput type="text" class="form-control" 
+                  [(ngModel)]="newProduct.name"  placeholder="Enter product name"
+                  name="newProduct.name" required>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="standard">
+                <mat-label>Product Number</mat-label>
+                <input matInput type="text" placeholder="Enter product number" class="form-control" 
+                  [(ngModel)]="newProduct.number" name="newProduct.number" required>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="standard">
+                <mat-label>Product Category</mat-label>
+                <input matInput placeholder="Enter product category" type="text" class="form-control" 
+                  [(ngModel)]="newProduct.category" name="newProduct.category" required>
+                
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="standard">
+                <mat-label>Product Price</mat-label>
+                <input matInput placeholder="Enter product price" type="text" class="form-control" 
+                [(ngModel)]="newProduct.price" name="newProduct.price" required>                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+            <button type="submit" class="btn btn-primary mb-3" value="Submit">Save</button>
+          </form>
+        </mat-expansion-panel>
+
+
+
+      </mat-accordion>
+
+
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<div class=" bg-image shadow-5-strong w-100" style="background-image: url('/assets/cover.jpg'); 
+    height: 100vh; background-repeat: no-repeat; background-size: cover; background-position: center center; ">
+          <div class="mask h-100 rgba-black-light" >
+<div class="container d-flex align-items-center justify-content-center  text-white h-100">
+<div class=" mt-5 shadow-lg w-50  mx-3 shadow-5-strong h-50 rounded   hr-light  font-weight-bold   white-text text-center">
+<form (submit)="OnLoginSubmit()" >
+    
+      <h2 class="page-header  ">Login</h2>
+      
+        <div class="form-group pb-2 ">
+          <label for="formGroupExampleInput2">Username</label>
+          <input type="text" class="form-control"  [(ngModel)]="username" name="username" >
+        </div>
+    
+      <div class="form-group pb-4 ">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control"  placeholder="Password" [(ngModel)]="password" name="password">
+      </div>
+        <button type="submit" class="btn btn-primary pt-2" value="Submit">Submit</button>
+  
+      
+      
+      
+   
+  
+  </form>
+</div>
+</div>
+</div>
+</div>

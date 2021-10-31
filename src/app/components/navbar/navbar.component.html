@@ -1,0 +1,50 @@
+
+<nav class="navbar navbar-expand-lg   fixed-top scrolling-navbar "  id="navbar">    
+  <div class="container">
+    <a class="navbar-brand" href="#"><strong>E-commerce</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link active" aria-current="page" routerLink="/"><strong>Home</strong></a>
+        </li>
+        
+      </ul>
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <ul class="navbar-nav px-3 form-inline  fw-bold">
+            <li class="nav-item "*ngIf="!loggedIn()">
+              <a class="nav-link active" aria-current="page"   routerLink="/login"><strong>Login</strong></a>
+            </li>
+            <li class="nav-item " *ngIf="loggedIn()">
+              <a  class="nav-link active" aria-current="page"  routerLink="/profile">
+                <strong>
+                <fa-icon [icon]="faUser" size="1x" > </fa-icon>
+                Welcome! :
+                {{user.name}}
+                <fa-icon [icon]="faShoppingCart" size="1x" > 
+                  
+                </fa-icon>
+                <span *ngIf="user.cart.length>0" class="badge badge-primary badge-pill "id='lblCartCount'>{{user.cart.length}}</span>
+              </strong></a>
+
+            </li>
+            
+            <li class="nav-item" *ngIf="loggedIn()">
+              <a class="nav-link active" (click)="OnLogoutClick()" aria-current="page"  href="#"><strong>Logout</strong></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" aria-current="page"   routerLink="/products"><strong>Products</strong></a>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>

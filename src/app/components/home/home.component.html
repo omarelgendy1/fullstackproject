@@ -1,0 +1,76 @@
+
+     <div class="container-fluid h-100  w-100 p-0 pb-5 ">
+        <header class="masthead text-white ">
+          <div class="container-fluid h-100 w-100">
+            <div class="row h-100 align-items-center">
+              <div *ngIf="isLoggedIn()" class="col-12 text-center">
+                <h1 class="fw-light">Welcome</h1>
+                <p class="lead"></p>
+              </div>
+              <div *ngIf="!isLoggedIn()" class="col-12 text-center">
+                <h1 class="fw-light">Star buying now</h1>
+                <p class="lead"></p>
+                <button type="button" class="btn btn-primary btn-lg mx-4 " routerLink="/register">
+                  <fa-icon [icon]="faUserPlus" class="pr-1"></fa-icon>
+                   Register
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4" routerLink="/login">
+                  <fa-icon [icon]="faSignInAlt" class="pr-1"></fa-icon>
+                  Login</button>
+              </div>
+            </div>
+          </div>
+        
+        </header>
+      </div>
+   
+
+    
+    <section class="page-section py-5 my-5" id="services">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Services</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
+      <div class="container text-center">
+          <div class="text-center">
+              <!-- <h2 class="section-heading text-uppercase">Services</h2>
+              <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+          </div>
+          <div class="row  pt-5" >
+              <div class="col-md-4 " >
+                <fa-stack clas="pb-2" size="4x" >
+                  <!-- <fa-icon  [icon]="faSquare"  stackItemSize="2x"></fa-icon> -->
+                  <fa-icon [icon]="faShoppingCart" stackItemSize="1x"></fa-icon>
+                </fa-stack>
+                
+                  <h4 class="my-3 ">Buy Online</h4>
+                  <p class="text-muted " >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                     Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+              </div>
+              <div class="col-md-4 " >
+                <fa-stack clas="pb-2" size="4x" >
+                  <!-- <fa-icon  [icon]="faSquare"  stackItemSize="2x"></fa-icon> -->
+                  <fa-icon [icon]="faTshirt" stackItemSize="1x"></fa-icon>
+                </fa-stack>
+                
+                  <h4 class="my-3 ">Many options</h4>
+                  <p class="text-muted " >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                     Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+              </div>
+              <div class="col-md-4 " >
+                <fa-stack clas="pb-2" size="4x" >
+                  <!-- <fa-icon  [icon]="faSquare"  stackItemSize="2x"></fa-icon> -->
+                  <fa-icon [icon]="faHome" stackItemSize="1x"></fa-icon>
+                </fa-stack>
+                
+                  <h4 class="my-3 ">Home delivery</h4>
+                  <p class="text-muted " >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                     Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+              </div>
+              
+              
+          </div>
+      </div>
+  </section>
+  
+   
